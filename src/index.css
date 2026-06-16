@@ -88,7 +88,7 @@ body {
    HEADER
    ======================================== */
 .portal-header {
-  background: linear-gradient(135deg, #1a1f2e 0%, #2d3556 100%);
+  background: #111111;
   padding: 28px 20px 24px;
   text-align: center;
   position: relative;
@@ -136,14 +136,14 @@ body {
 .header-title {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #f97316;
   letter-spacing: -0.5px;
   line-height: 1.2;
   margin-bottom: 4px;
 }
 
 .header-title span {
-  color: rgba(255, 255, 255, 0.5);
+  color: #f97316;
   font-weight: 400;
 }
 
@@ -259,8 +259,8 @@ body {
 
 /* Logo wrapper — white bg for visibility */
 .card-logo-wrap {
-  width: 58px;
-  height: 58px;
+  width: 68px;
+  height: 68px;
   border-radius: 12px;
   background: #ffffff;
   border: 1.5px solid var(--border);
@@ -280,10 +280,6 @@ body {
 .aqua-logo-wrap {
   border-color: var(--aqua-border);
   background: #f0f8ff;
-  width: 70px;
-  height: 70px;
-  border-radius: 14px;
-  padding: 6px;
 }
 
 .card-logo {
@@ -308,9 +304,7 @@ body {
   color: var(--sr-accent);
 }
 
-.aqua-name {
-  color: var(--aqua-accent);
-}
+.aqua-name { color: #f97316; }
 
 .card-brand-tag {
   font-size: 0.72rem;
@@ -356,80 +350,39 @@ body {
 .action-row {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   flex-wrap: wrap;
   padding-top: 2px;
 }
 
+/* Base icon button — orange theme */
 .icon-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f4f8;
-  border: 1.5px solid var(--border);
-  color: var(--text-mid);
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition);
   flex-shrink: 0;
+  background: #f97316;
+  border: none;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(249,115,22,0.3);
 }
 
 .icon-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
 
 .icon-btn:hover {
-  background: var(--bg-card);
-  border-color: var(--border-hover);
-  color: var(--text-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* SR hover accent */
-.sr-card .icon-btn:hover {
-  border-color: var(--sr-accent);
-  color: var(--sr-accent);
-  box-shadow: 0 3px 8px rgba(232, 80, 10, 0.15);
-}
-
-/* Aqua hover accent */
-.aqua-card .icon-btn:hover {
-  border-color: var(--aqua-accent);
-  color: var(--aqua-accent);
-  box-shadow: 0 3px 8px rgba(0, 119, 204, 0.15);
-}
-
-/* WhatsApp button */
-.icon-btn.wa-btn {
-  background: #e8fdf1;
-  border-color: #b2f0d0;
-  color: var(--wa-green);
-}
-
-.icon-btn.wa-btn:hover {
-  background: var(--wa-green);
-  color: #fff !important;
-  border-color: var(--wa-green);
-  box-shadow: 0 3px 12px rgba(37, 211, 102, 0.35) !important;
-}
-
-/* Facebook button */
-.icon-btn.fb-btn {
-  background: #eaf2ff;
-  border-color: #b3d0f7;
-  color: var(--fb-blue);
-}
-
-.icon-btn.fb-btn:hover {
-  background: var(--fb-blue);
-  color: #fff !important;
-  border-color: var(--fb-blue);
-  box-shadow: 0 3px 12px rgba(24, 119, 242, 0.35) !important;
+  background: #ea580c;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 18px rgba(249,115,22,0.45);
 }
 
 /* ========================================
