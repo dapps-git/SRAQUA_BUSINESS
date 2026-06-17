@@ -1,8 +1,6 @@
 import React from 'react';
 import srLogo from './assets/sr_logo.png';
 import aquaLogo from './assets/aqua_logo.png';
-import srChimney from './assets/sr_chimney.png';
-import aquaFilter from './assets/aqua_filter.png';
 
 function App() {
   const handleAction = (business, action) => {
@@ -80,10 +78,15 @@ function App() {
         <div className="header-badge">Our Businesses</div>
         <h1 className="header-title">SR Flames <span>&amp;</span> AquaPool</h1>
         <p className="header-sub">Quality • Luxury • Reliability</p>
-        <div className="header-location">
+        <a 
+          href="https://maps.google.com/?q=SR+Flames+AquaPool+Kootanad+Palakkad" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="header-location-link"
+        >
           <span className="location-icon"><MapPinIcon /></span>
           <span>Kootanad, Palakkad</span>
-        </div>
+        </a>
       </header>
 
       {/* Main Rows Container */}
@@ -91,90 +94,122 @@ function App() {
 
         {/* SR Flames Card */}
         <section className="business-card sr-card">
-          <div className="card-image-col">
-            <img src={srChimney} alt="SR Flames Chimney" className="card-img" />
-            <div className="card-img-overlay sr-overlay"></div>
-          </div>
           <div className="card-body">
             <div className="card-brand-row">
               <div className="card-logo-wrap sr-logo-wrap">
                 <img src={srLogo} alt="SR Flames Logo" className="card-logo" />
               </div>
-              <div className="card-brand-info">
-                <h2 className="card-brand-name sr-name">SR Flames</h2>
-                <p className="card-brand-tag">Stove &amp; Chimney</p>
-              </div>
+              <p className="card-brand-tag">Stove &amp; Chimney</p>
             </div>
 
-            <div className="card-location">
+            <a 
+              href="https://maps.google.com/?q=SR+Flames+Kootanad+Palakkad" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="card-location-link"
+            >
               <span className="loc-pin"><MapPinIcon /></span>
               <span>Kootanad, Palakkad</span>
-            </div>
+            </a>
 
-            <div className="action-row">
-              <a href="tel:+919747900014" className="icon-btn btn-phone" title="Call" onClick={() => handleAction('SR Flames', 'Call')}>
-                <PhoneIcon />
-              </a>
-              <a href="https://wa.me/919747900014" target="_blank" rel="noopener noreferrer" className="icon-btn btn-wa" title="WhatsApp" onClick={() => handleAction('SR Flames', 'WhatsApp')}>
-                <WaIcon />
-              </a>
-              <a href="https://www.srflames.com/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-web" title="Website" onClick={() => handleAction('SR Flames', 'Website')}>
-                <GlobeIcon />
-              </a>
-              <a href="https://search.google.com/local/writereview?placeid=ChIJz85MWwDBpzsRCoi06TjWGXg" target="_blank" rel="noopener noreferrer" className="icon-btn btn-review" title="Review" onClick={() => handleAction('SR Flames', 'Review')}>
-                <StarIcon />
-              </a>
-              <a href="https://www.instagram.com/sr_flames__?igsh=MTVjbnptb2gwbWFtMA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="icon-btn btn-insta" title="Instagram" onClick={() => handleAction('SR Flames', 'Instagram')}>
-                <InstaIcon />
-              </a>
-              <a href="https://www.facebook.com/share/1EdphCbHNH/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-fb" title="Facebook" onClick={() => handleAction('SR Flames', 'Facebook')}>
-                <FbIcon />
-              </a>
+            <div className="action-grid">
+              <div className="action-item">
+                <a href="tel:+919747900014" className="icon-btn btn-phone" onClick={() => handleAction('SR Flames', 'Call')}>
+                  <PhoneIcon />
+                </a>
+                <span className="icon-label">Call</span>
+              </div>
+              <div className="action-item">
+                <a href="https://wa.me/919747900014" target="_blank" rel="noopener noreferrer" className="icon-btn btn-wa" onClick={() => handleAction('SR Flames', 'WhatsApp')}>
+                  <WaIcon />
+                </a>
+                <span className="icon-label">WhatsApp</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.srflames.com/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-web" onClick={() => handleAction('SR Flames', 'Website')}>
+                  <GlobeIcon />
+                </a>
+                <span className="icon-label">Website</span>
+              </div>
+              <div className="action-item">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJz85MWwDBpzsRCoi06TjWGXg" target="_blank" rel="noopener noreferrer" className="icon-btn btn-review" onClick={() => handleAction('SR Flames', 'Review')}>
+                  <StarIcon />
+                </a>
+                <span className="icon-label">Review</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.instagram.com/sr_flames__?igsh=MTVjbnptb2gwbWFtMA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="icon-btn btn-insta" onClick={() => handleAction('SR Flames', 'Instagram')}>
+                  <InstaIcon />
+                </a>
+                <span className="icon-label">Instagram</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.facebook.com/share/1EdphCbHNH/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-fb" onClick={() => handleAction('SR Flames', 'Facebook')}>
+                  <FbIcon />
+                </a>
+                <span className="icon-label">Facebook</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Aqua Pool Card */}
         <section className="business-card aqua-card">
-          <div className="card-image-col">
-            <img src={aquaFilter} alt="AquaPool Filter" className="card-img" />
-            <div className="card-img-overlay aqua-overlay"></div>
-          </div>
           <div className="card-body">
             <div className="card-brand-row">
               <div className="card-logo-wrap aqua-logo-wrap">
                 <img src={aquaLogo} alt="AquaPool Logo" className="card-logo" />
               </div>
-              <div className="card-brand-info">
-                <h2 className="card-brand-name aqua-name">AquaPool</h2>
-                <p className="card-brand-tag">Water Filtration</p>
-              </div>
+              <p className="card-brand-tag">Water Filtration</p>
             </div>
 
-            <div className="card-location">
+            <a 
+              href="https://maps.google.com/?q=AquaPool+Kootanad+Palakkad" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="card-location-link"
+            >
               <span className="loc-pin"><MapPinIcon /></span>
               <span>Kootanad, Palakkad</span>
-            </div>
+            </a>
 
-            <div className="action-row">
-              <a href="tel:+919747900014" className="icon-btn btn-phone" title="Call" onClick={() => handleAction('AquaPool', 'Call')}>
-                <PhoneIcon />
-              </a>
-              <a href="https://wa.me/919747900014" target="_blank" rel="noopener noreferrer" className="icon-btn btn-wa" title="WhatsApp" onClick={() => handleAction('AquaPool', 'WhatsApp')}>
-                <WaIcon />
-              </a>
-              <a href="https://www.aquapools.in/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-web" title="Website" onClick={() => handleAction('AquaPool', 'Website')}>
-                <GlobeIcon />
-              </a>
-              <a href="https://search.google.com/local/writereview?placeid=ChIJz85MWwDBpzsRCoi06TjWGXg" target="_blank" rel="noopener noreferrer" className="icon-btn btn-review" title="Review" onClick={() => handleAction('AquaPool', 'Review')}>
-                <StarIcon />
-              </a>
-              <a href="https://www.instagram.com/_aqua_pool_?utm_source=qr" target="_blank" rel="noopener noreferrer" className="icon-btn btn-insta" title="Instagram" onClick={() => handleAction('AquaPool', 'Instagram')}>
-                <InstaIcon />
-              </a>
-              <a href="https://www.facebook.com/share/1Dx3KRnHDp/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-fb" title="Facebook" onClick={() => handleAction('AquaPool', 'Facebook')}>
-                <FbIcon />
-              </a>
+            <div className="action-grid">
+              <div className="action-item">
+                <a href="tel:+919747900014" className="icon-btn btn-phone" onClick={() => handleAction('AquaPool', 'Call')}>
+                  <PhoneIcon />
+                </a>
+                <span className="icon-label">Call</span>
+              </div>
+              <div className="action-item">
+                <a href="https://wa.me/919747900014" target="_blank" rel="noopener noreferrer" className="icon-btn btn-wa" onClick={() => handleAction('AquaPool', 'WhatsApp')}>
+                  <WaIcon />
+                </a>
+                <span className="icon-label">WhatsApp</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.aquapools.in/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-web" onClick={() => handleAction('AquaPool', 'Website')}>
+                  <GlobeIcon />
+                </a>
+                <span className="icon-label">Website</span>
+              </div>
+              <div className="action-item">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJz85MWwDBpzsRCoi06TjWGXg" target="_blank" rel="noopener noreferrer" className="icon-btn btn-review" onClick={() => handleAction('AquaPool', 'Review')}>
+                  <StarIcon />
+                </a>
+                <span className="icon-label">Review</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.instagram.com/_aqua_pool_?utm_source=qr" target="_blank" rel="noopener noreferrer" className="icon-btn btn-insta" onClick={() => handleAction('AquaPool', 'Instagram')}>
+                  <InstaIcon />
+                </a>
+                <span className="icon-label">Instagram</span>
+              </div>
+              <div className="action-item">
+                <a href="https://www.facebook.com/share/1Dx3KRnHDp/" target="_blank" rel="noopener noreferrer" className="icon-btn btn-fb" onClick={() => handleAction('AquaPool', 'Facebook')}>
+                  <FbIcon />
+                </a>
+                <span className="icon-label">Facebook</span>
+              </div>
             </div>
           </div>
         </section>
