@@ -89,7 +89,7 @@ body {
    ======================================== */
 .portal-header {
   background: #ffffff;
-  padding: 32px 20px 28px;
+  padding: 14px 20px 12px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -125,27 +125,44 @@ body {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   color: var(--text-muted);
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 2px 8px;
   border-radius: 100px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .header-title {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  margin-bottom: 6px;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 4px;
 }
 
 .header-title span {
   color: #94a3b8;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.sr-brand {
+  color: var(--sr-accent);
+  font-weight: 900;
+}
+
+.aqua-brand {
+  color: var(--aqua-accent);
+  font-weight: 900;
+}
+
+.amp {
+  color: #94a3b8;
+  font-weight: 300;
+  font-size: 1.3rem;
 }
 
 .header-sub {
@@ -164,9 +181,9 @@ body {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   border-radius: 100px;
-  padding: 6px 16px;
+  padding: 4px 12px;
   color: #334155;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -197,8 +214,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
+  gap: 8px;
+  padding: 8px 12px;
 }
 
 /* ========================================
@@ -230,12 +247,12 @@ body {
 
 /* Card Body */
 .card-body {
-  padding: 24px 20px;
+  padding: 10px 16px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
+  gap: 6px;
   flex: 1;
   min-width: 0;
 }
@@ -245,7 +262,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   width: 100%;
 }
 
@@ -265,18 +282,18 @@ body {
 }
 
 .card-logo {
-  height: 64px;
+  height: 56px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
 }
 
 .card-brand-tag {
-  font-size: 0.82rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
 }
 
 /* Location Link inside card */
@@ -320,18 +337,18 @@ body {
 .action-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+  gap: 8px;
   width: 100%;
-  padding-top: 16px;
+  padding-top: 8px;
   border-top: 1px solid var(--border);
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .action-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 /* Base icon button — clean squircle styling */
@@ -446,11 +463,11 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 14px 16px;
+  padding: 8px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   transition: var(--transition);
 }
 
@@ -467,9 +484,9 @@ body {
 }
 
 .plans-strip-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   background: var(--aqua-light);
   border: 1px solid var(--aqua-border);
   color: var(--aqua-accent);
@@ -480,8 +497,8 @@ body {
 }
 
 .plans-strip-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .plans-title {
@@ -508,9 +525,9 @@ body {
 }
 
 .strip-btn {
-  padding: 8px 14px;
+  padding: 5px 12px;
   border-radius: var(--radius-sm);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   border: 1px solid #e2e8f0;
   background: #f8fafc;
@@ -542,7 +559,7 @@ body {
    ======================================== */
 .portal-footer {
   margin-top: auto;
-  padding: 16px;
+  padding: 6px 16px;
   text-align: center;
   border-top: 1px solid var(--border);
   background: #ffffff;
