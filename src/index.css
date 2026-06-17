@@ -195,6 +195,9 @@ body {
    BUSINESS CARD
    ======================================== */
 .business-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -208,11 +211,11 @@ body {
   transform: translateY(-2px);
 }
 
-/* Image column - top strip */
+/* Image column - side thumbnail */
 .card-image-col {
   position: relative;
-  width: 100%;
-  height: 110px;
+  width: 110px;
+  min-width: 110px;
   overflow: hidden;
 }
 
@@ -248,6 +251,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Brand Row: logo + name */
@@ -355,10 +360,10 @@ body {
   padding-top: 2px;
 }
 
-/* Base icon button — orange theme */
+/* Base icon button — clean standalone icon style */
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -367,22 +372,34 @@ body {
   cursor: pointer;
   transition: var(--transition);
   flex-shrink: 0;
-  background: #f97316;
+  background: transparent;
   border: none;
-  color: #fff;
   outline: none;
-  box-shadow: 0 2px 8px rgba(249,115,22,0.3);
+  box-shadow: none;
 }
 
 .icon-btn svg {
-  width: 17px;
-  height: 17px;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .icon-btn:hover {
-  background: #ea580c;
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 6px 18px rgba(249,115,22,0.45);
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.icon-btn:hover svg {
+  transform: scale(1.18);
+}
+
+/* Standalone brand color overrides for Phone and Website */
+.btn-phone {
+  color: #16a34a; /* Call green */
+}
+
+.btn-web {
+  color: #2563eb; /* Website/Globe blue */
 }
 
 /* ========================================
@@ -530,12 +547,12 @@ body {
     font-size: 0.75rem;
   }
   .icon-btn {
-    width: 33px;
-    height: 33px;
+    width: 38px;
+    height: 38px;
   }
   .icon-btn svg {
-    width: 14px;
-    height: 14px;
+    width: 26px;
+    height: 26px;
   }
   .rows-container {
     padding: 12px 10px;
@@ -567,7 +584,7 @@ body {
     gap: 5px;
   }
   .icon-btn {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
   }
 }
