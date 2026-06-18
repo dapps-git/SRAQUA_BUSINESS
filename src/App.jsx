@@ -222,10 +222,11 @@ function App() {
               <span className="btn-desc">+91 94460 49350</span>
             </a>
           </div>
+          <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
         </section>
 
         {/* Inline Footer */}
-        <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
+
 
       </main>
     </div>
