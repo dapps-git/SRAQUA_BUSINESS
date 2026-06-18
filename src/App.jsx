@@ -206,7 +206,10 @@ function App() {
             </div>
             <div className="plans-strip-details">
               <h3 className="plans-title">Water Authority Queries</h3>
-              <p className="plans-sub">Get quick assistance for all water testing queries</p>
+              <p className="plans-sub">
+                <span className="plans-loc-pin"><MapPinIcon /></span>
+                <span>Mele Pattambi · Water testing queries</span>
+              </p>
             </div>
           </div>
           <div className="plans-strip-actions">
@@ -221,12 +224,10 @@ function App() {
           </div>
         </section>
 
-      </main>
+        {/* Inline Footer */}
+        <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
 
-      {/* Footer */}
-      <footer className="portal-footer">
-        <p className="footer-copy">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
-      </footer>
+      </main>
     </div>
   );
 }
