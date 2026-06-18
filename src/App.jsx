@@ -236,15 +236,8 @@ function App() {
 
           <div className="footer-wrap">
             <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
-            <a
-              href="https://g.page/r/CTdgfcXqLKsVEBM/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-review-link"
-              onClick={() => handleAction('Footer', 'Kootanad Review')}
-            >
 
-            </a>
+
           </div>
         </section>
 
