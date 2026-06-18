@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import srLogo from './assets/sr_logo.png';
 import aquaLogo from './assets/aqua_logo.png';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleAction = (business, action) => {
     console.log(`${business} - clicked ${action}`);
   };
+
+  const aquaPoolBranches = [
+    { name: 'Kootanad', url: 'https://g.page/r/CTdgfcXqLKsVEBM/review', isMain: true },
+    { name: 'Pattambi', url: 'https://g.page/r/CZVctpSH8U0LEBM/review', isMain: false },
+    { name: 'Ottapalam', url: 'https://g.page/r/CVt6R9-ygNpBEBM/review', isMain: false },
+    { name: 'Perinthalmanna', url: 'https://g.page/r/Ca3ZQ_XKZCa9EBM/review', isMain: false },
+    { name: 'Cherupulasherry', url: 'https://g.page/r/CSatglmtQgt2EBM/review', isMain: false },
+    { name: 'Valanchery', url: 'https://g.page/r/Ca955Ymvt-JQEBM/review', isMain: false },
+  ];
 
   // Facebook — official filled
   const FbIcon = () => (
@@ -36,8 +47,8 @@ function App() {
   );
 
   // Google Review — Google G colored
-  const StarIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none">
+  const StarIcon = (props) => (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
@@ -175,9 +186,9 @@ function App() {
                 <span className="icon-label">Website</span>
               </div>
               <div className="action-item">
-                <a href="https://search.google.com/local/writereview?placeid=ChIJz85MWwDBpzsRCoi06TjWGXg" target="_blank" rel="noopener noreferrer" className="icon-btn btn-review" onClick={() => handleAction('AquaPool', 'Review')}>
+                <button type="button" className="icon-btn btn-review" onClick={() => { handleAction('AquaPool', 'Open Review Modal'); setIsModalOpen(true); }}>
                   <StarIcon />
-                </a>
+                </button>
                 <span className="icon-label">Review</span>
               </div>
               <div className="action-item">
@@ -222,13 +233,68 @@ function App() {
               <span className="btn-desc">+91 94460 49350</span>
             </a>
           </div>
-          <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
+
+          <div className="footer-wrap">
+            <p className="inline-footer">&copy; {new Date().getFullYear()} SR Flames &amp; AquaPool · Kootanad, Palakkad</p>
+            <a
+              href="https://g.page/r/CTdgfcXqLKsVEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-review-link"
+              onClick={() => handleAction('Footer', 'Kootanad Review')}
+            >
+
+            </a>
+          </div>
         </section>
 
-        {/* Inline Footer */}
-
-
       </main>
+
+      {/* AquaPool Branches Modal */}
+      {isModalOpen && (
+        <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <div className="modal-title-wrap">
+                <StarIcon className="modal-header-icon" />
+                <h3 className="modal-title">AquaPool Branches</h3>
+              </div>
+              <p className="modal-subtitle">Select a branch to write a review on Google</p>
+              <button type="button" className="modal-close-btn" onClick={() => setIsModalOpen(false)} aria-label="Close modal">
+                &times;
+              </button>
+            </div>
+            <div className="modal-body">
+              <div className="branch-list">
+                {aquaPoolBranches.map((branch) => (
+                  <div key={branch.name} className="branch-item">
+                    <div className="branch-info">
+                      <span className="branch-pin-icon"><MapPinIcon /></span>
+                      <span className="branch-name">
+                        {branch.name}
+                        {branch.isMain && <span className="main-branch-badge">Main Branch</span>}
+                      </span>
+                    </div>
+                    <a
+                      href={branch.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="branch-review-btn"
+                      onClick={() => {
+                        handleAction('AquaPool Review', branch.name);
+                        setIsModalOpen(false);
+                      }}
+                    >
+                      <StarIcon className="branch-btn-icon" />
+                      <span>Write Review</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
