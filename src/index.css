@@ -459,15 +459,14 @@ body {
    WATER AUTHORITY PLANS STRIP
    ======================================== */
 .plans-strip {
-  background: var(--bg-card);
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 8px 14px;
+  padding: 12px 14px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
   transition: var(--transition);
 }
 
@@ -475,83 +474,124 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-.plans-strip-left {
+.plans-strip-top {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  width: 100%;
+}
+
+.plans-strip-details {
   min-width: 0;
   flex: 1;
 }
 
 .plans-strip-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--aqua-light);
-  border: 1px solid var(--aqua-border);
-  color: var(--aqua-accent);
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--aqua-accent) 0%, #005fa3 100%);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 119, 204, 0.15);
 }
 
 .plans-strip-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .plans-title {
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--text-dark);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
 }
 
 .plans-sub {
   font-size: 0.72rem;
   color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
+  margin-top: 2px;
 }
 
 .plans-strip-actions {
   display: flex;
   gap: 8px;
-  flex-shrink: 0;
+  width: 100%;
+}
+
+.plans-strip-actions .strip-btn {
+  flex: 1;
 }
 
 .strip-btn {
-  padding: 5px 12px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  font-weight: 600;
   border: 1px solid #e2e8f0;
-  background: #f8fafc;
+  background: #ffffff;
   color: var(--text-dark);
   cursor: pointer;
   transition: var(--transition);
-  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.strip-btn .btn-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.strip-btn .btn-desc {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.2;
 }
 
 .strip-btn:hover {
-  background: #f1f5f9;
+  background: #f8fafc;
   border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.strip-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .strip-btn.primary-strip-btn {
-  background: var(--aqua-accent);
-  border-color: var(--aqua-accent);
+  background: linear-gradient(135deg, var(--aqua-accent) 0%, #005fa3 100%);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 119, 204, 0.12);
+}
+
+.strip-btn.primary-strip-btn .btn-title {
   color: #fff;
 }
 
+.strip-btn.primary-strip-btn .btn-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .strip-btn.primary-strip-btn:hover {
-  background: #005fa3;
-  border-color: #005fa3;
-  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.15);
+  background: linear-gradient(135deg, #0088eb 0%, #006ebc 100%);
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.22);
+  transform: translateY(-1px);
+}
+
+.strip-btn.primary-strip-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* ========================================
@@ -616,17 +656,5 @@ body {
   }
   .card-body {
     padding: 20px 14px;
-  }
-  .plans-strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .plans-strip-actions {
-    width: 100%;
-  }
-  .strip-btn {
-    flex: 1;
-    text-align: center;
   }
 }
