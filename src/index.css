@@ -68,9 +68,10 @@ body {
 #root {
   width: 100%;
   max-width: 480px;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ========================================
@@ -79,9 +80,10 @@ body {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   background: var(--bg-page);
+  overflow: hidden;
 }
 
 /* ========================================
@@ -89,7 +91,7 @@ body {
    ======================================== */
 .portal-header {
   background: #ffffff;
-  padding: 14px 20px 12px;
+  padding: 10px 20px 8px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -214,8 +216,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 6px;
+  padding: 6px 12px;
 }
 
 /* ========================================
@@ -282,7 +284,7 @@ body {
 }
 
 .card-logo {
-  height: 56px;
+  height: 52px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -599,16 +601,18 @@ body {
    ======================================== */
 .portal-footer {
   margin-top: auto;
-  padding: 6px 16px;
+  padding: 4px 16px;
   text-align: center;
   border-top: 1px solid var(--border);
   background: #ffffff;
 }
 
 .footer-copy {
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 
 /* ========================================
